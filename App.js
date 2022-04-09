@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ImageBackground, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Button, ImageBackground, SafeAreaView, Platform, Image } from 'react-native';
 
 export default function App() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ImageBackground source={ require('./assets/Group17.png')} resizeMode='stretch' style={styles.container}>
-        <View style={styles.heder}></View>
+        <View style={styles.heder}/>
+        <Image source={ require('./assets/Menu.png')} style={{marginLeft:20, marginTop:55, position: 'absolute',}}/>
         <Text>Hello my name is Nuwan Wijeweera</Text>
         <StatusBar style="auto" />
       </ImageBackground>
@@ -16,14 +17,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  
+      
   },
 
   heder: {
-  marginTop: 40,
+  paddingTop: Platform.OS === 'android' ? StatusBar.height : 0,
+  marginTop: 30,
   height: 60,
-  width: 400,
+  width: '100%',
   backgroundColor: '#fff',
-  alignItems: 'center',  
-  }
+  },
+
 });
