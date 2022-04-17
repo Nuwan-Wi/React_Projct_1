@@ -4,15 +4,18 @@ import { StyleSheet, Text, View, Button, ImageBackground, SafeAreaView, Platform
 export default function App() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <ImageBackground source={ require('./assets/Group17.png')} resizeMode='stretch' style={styles.container}>
+      <ImageBackground source={ require('./assets/Group17.png')} resizeMode='stretch' style={{flex:1,}}>
         <View style={styles.heder}/>
-        <Image source={ require('./assets/Menu.png')} style={{marginLeft:20, marginTop:55, position: 'absolute',}}/>
+        <Image source={ require('./assets/Menu.png')} style={styles.menu}/>
+        <Image source={ require('./assets/projectlogoMini.png')} style={styles.logomini}/>
+        <Text style={styles.head} >Ayurveda Medi App </Text>
         <Text>Hello my name is Nuwan Wijeweera</Text>
         <StatusBar style="auto" />
       </ImageBackground>
-    </SafeAreaView>
+</SafeAreaView>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -27,5 +30,27 @@ const styles = StyleSheet.create({
   width: '100%',
   backgroundColor: '#fff',
   },
-
+  menu: {
+  height:20, 
+  width:20, 
+  resizeMode:'contain',
+  marginLeft:'2%', 
+  marginTop:55, 
+  position: 'absolute',
+  },
+  logomini:{
+  alignSelf:'flex-end', 
+  height:50, 
+  width:50, 
+  resizeMode:'contain', 
+  marginTop:35, 
+  position: 'absolute', 
+  marginRight:'5%',
+  },
+  head:{
+    textAlign:'center',
+    fontSize:20,
+    marginTop:-40,
+    // fontFamily:'Arial',
+  },
 });
